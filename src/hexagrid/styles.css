@@ -24,7 +24,6 @@ body {
   stroke: #333;
   fill: #7fc7d388;
   transition: all 0.3s ease;
-
 }
 
 .hex-group:hover .hex {
@@ -44,4 +43,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.hex-trapeze {
+  stroke: #fff;
+  fill: transparent;
+}
+
+.side-content {
+  font-size: 7px;
 }
