@@ -12,74 +12,45 @@ $json = json_decode(file_get_contents(__DIR__ . '/toilets.json'), true);
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
+    <link rel="stylesheet" href="styles.css">
     <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-
-        #leaflet-map {
-            height: 100vh;
-        }
-
         #search-container {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    background: white;
-    padding: 8px;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    display: flex; /* Aligne input et bouton sur une seule ligne */
-    align-items: center;
-    gap: 5px;
-    width: 90%; /* Largeur adaptative */
-    max-width: 400px; /* Ne dépasse pas cette largeur sur grand écran */
-}
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: white;
+            padding: 8px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            display: flex;
+            gap: 5px;
+        }
 
-#search-container input {
-    flex: 1; /* Permet à l'input de prendre tout l'espace disponible */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
+        input, button {
+            padding: 6px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
 
-#search-container button {
-    padding: 8px 10px;
-    border: none;
-    background: #007bff;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px; /* Taille fixe pour éviter les sauts */
-}
-
-/* Media query pour les petits écrans */
-@media screen and (max-width: 480px) {
-    #search-container {
-        width: 70%;
-        max-width: 70%;
-    }
-}
-
+        button {
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Barre de recherche -->
+    <!-- Barre de recherche + Bouton localisation -->
     <form onsubmit="searchAddress(event)">
         <div id="search-container">
             <input type="text" id="search" placeholder="Rechercher une adresse..." />
             <button type="submit">🔍</button>
+            <button type="button" onclick="locateUser()">📍</button>
         </div>
     </form>
 
@@ -99,6 +70,7 @@ $json = json_decode(file_get_contents(__DIR__ . '/toilets.json'), true);
 
             let markers = new Map(); // Stockage des marqueurs
             let searchMarker = null; // Marqueur de recherche
+            let userMarker = null; // Marqueur de géolocalisation utilisateur
 
             function loadToilets(bounds) {
                 fetch('toilets.json')
@@ -107,10 +79,7 @@ $json = json_decode(file_get_contents(__DIR__ . '/toilets.json'), true);
                         data.forEach(toilet => {
                             if (toilet.nom_de_la_commune !== "Paris") return;
 
-                            let {
-                                lat,
-                                lon
-                            } = toilet.coord_geo;
+                            let { lat, lon } = toilet.coord_geo;
                             if (!bounds.contains([lat, lon])) return;
 
                             let key = `${lat},${lon}`;
@@ -142,9 +111,7 @@ $json = json_decode(file_get_contents(__DIR__ . '/toilets.json'), true);
                             return;
                         }
 
-                        let {
-                            coordinates
-                        } = data.features[0].geometry;
+                        let { coordinates } = data.features[0].geometry;
                         let [lon, lat] = coordinates;
 
                         // Supprime l'ancien marqueur de recherche
@@ -153,9 +120,7 @@ $json = json_decode(file_get_contents(__DIR__ . '/toilets.json'), true);
                         }
 
                         // Ajoute un marqueur sur l'adresse trouvée
-                        searchMarker = L.marker([lat, lon], {
-                                color: 'red'
-                            })
+                        searchMarker = L.marker([lat, lon])
                             .addTo(map)
                             .bindPopup(`📍 ${query}`)
                             .openPopup();
@@ -164,6 +129,42 @@ $json = json_decode(file_get_contents(__DIR__ . '/toilets.json'), true);
                         map.setView([lat, lon], 15);
                     })
                     .catch(error => console.error('Erreur lors de la recherche:', error));
+            };
+
+            // Fonction pour localiser l'utilisateur
+            window.locateUser = function() {
+                if (!navigator.geolocation) {
+                    alert("Votre navigateur ne supporte pas la géolocalisation.");
+                    return;
+                }
+
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        let { latitude, longitude } = position.coords;
+
+                        // Supprime l'ancien marqueur utilisateur
+                        if (userMarker) {
+                            map.removeLayer(userMarker);
+                        }
+
+                        // Ajoute un marqueur sur la position actuelle
+                        userMarker = L.marker([latitude, longitude], { icon: L.icon({
+                            iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-red.png', 
+                            iconSize: [30, 40], 
+                            iconAnchor: [15, 40]
+                        })})
+                            .addTo(map)
+                            .bindPopup("📍 Vous êtes ici")
+                            .openPopup();
+
+                        // Centre la carte sur la position actuelle
+                        map.setView([latitude, longitude], 15);
+                    },
+                    (error) => {
+                        console.error("Erreur de géolocalisation :", error);
+                        alert("Impossible d'obtenir votre position.");
+                    }
+                );
             };
         });
     </script>
