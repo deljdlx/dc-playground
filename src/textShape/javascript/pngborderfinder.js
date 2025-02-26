@@ -83,7 +83,7 @@ PNGBorderFinder.prototype.getSideDots=function(side) {
 					'direction': direction,
 					'side': side
 				});
-				
+
 				lastX=x;
 				lastY=y;
 			}
@@ -142,19 +142,19 @@ PNGBorderFinder.prototype.filterByAngle=function(polygon) {
 }
 
 PNGBorderFinder.prototype.filterByDistance=function(polygon) {
-		
+
 	var start=false;
 	var polygon2=[];
-	
+
 	for(var i=0; i<polygon.length; i++) {
 		var dot=polygon[i];
-		
+
 		if(start) {
 			var distance=Math.sqrt(
 				Math.pow(Math.abs(start.x-dot.x), 2)
 				+Math.pow(Math.abs(start.y-dot.y), 2)
 			);
-			
+
 			if(distance>this.distanceThreshold) {
 				start=dot;
 				polygon2.push(dot);
@@ -176,10 +176,10 @@ PNGBorderFinder.prototype.computeDots=function() {
 	var leftDots=this.getSideDots('left');
 
 	var minX=false;
-	
+
 	for(var i=0; i<leftDots.length; i++) {
 		var point=leftDots[i];
-		
+
 		if(minX===false || point['x']<minX) {
 			minX=point['x'];
 		}
@@ -190,9 +190,9 @@ PNGBorderFinder.prototype.computeDots=function() {
 
 	 var maxX=false;
 	for(var i=0; i<rightDots.length; i++) {
-	
+
 		var point=rightDots[i];
-	
+
 		if(maxX===false || point['x']>maxX) {
 			maxX=point['x'];
 		}
@@ -200,16 +200,16 @@ PNGBorderFinder.prototype.computeDots=function() {
 			maxX=point['lastX'];
 		}
 	}
-	
-	
-	var polygon=[];
-	
 
-	
+
+	var polygon=[];
+
+
+
 	for(var i=0; i<leftDots.length; i++) {
 		var point=leftDots[i];
 		if(point['x']<maxX &&  point['lastX']<maxX) {
-		
+
 			polygon.push({
 				'x': point['x'],
 				'y': point['y'],
@@ -217,7 +217,7 @@ PNGBorderFinder.prototype.computeDots=function() {
 			});
 		}
 	}
-	
+
 	rightDots=rightDots.reverse();
 	for(var i=0; i<rightDots.length; i++) {
 		var point=rightDots[i];
@@ -229,11 +229,11 @@ PNGBorderFinder.prototype.computeDots=function() {
 			});
 		}
 	}
-	
-	
+
+
 	polygon=this.filterByAngle(polygon);
 	polygon=this.filterByDistance(polygon);
-	
+
 	this.dots=polygon;
 }
 
@@ -248,7 +248,7 @@ PNGBorderFinder.prototype.computeRectangles=function() {
 
 	for(var i=0; i<this.dots.length; i++) {
 		var dot=this.dots[i];
-		
+
 		if(dot.side=='left') {
 			rectangles.push({
 				'y': dot.y,
@@ -264,7 +264,7 @@ PNGBorderFinder.prototype.computeRectangles=function() {
 			});
 		}
 	}
-	
+
 	this.rectangles=rectangles.sort(function(item1, item2) {
 		if(item1.y<item2.y) {
 			return -1;
