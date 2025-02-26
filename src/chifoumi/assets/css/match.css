@@ -1,0 +1,48 @@
+.match-container {
+  position: absolute;
+  width:100%;
+  border: solid 1px #000;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 10px #000;
+}
+
+.match-container--hidden {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.match__choice-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.match__choice-container--disabled {
+  transform: scale(0);
+}
+
+.match__choice {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.match__choice:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 3px 3px 10px #000;
+}
+
+.match__choice--selected {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 3px 3px 10px #000;
+}
+
+.match__choice--disabled {
+  transform: scale(0.8);
+  filter: grayscale(100%) blur(2px);
+}
+

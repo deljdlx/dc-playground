@@ -1,0 +1,31 @@
+/* css variables */
+:root {
+  --content-win: "🎉";
+  --content-loose: "💢";
+  --content-equal: "⚔️";
+}
+
+
+body {
+  background-color: #ccc;
+  text-align: center;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+#theme-selector {
+  text-align: right;
+  background-color: #fff;
+  padding: 2px;
+}
+
+.chifoumi {
+  position: absolute;
+  width: 700px;
+  margin: auto;
+  transition: all 0.3s ease-in-out;
+  left: 50%;
+  top: 20%;
+  margin-left: -350px;
+}
+

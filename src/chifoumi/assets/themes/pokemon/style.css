@@ -1,0 +1,20 @@
+.choice {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  border: #000 solid 1px;
+}
+
+.choice--0 {
+  background-image: url(./red.png);
+}
+
+.choice--1 {
+  background-image: url(./blue.png);
+}
+
+.choice--2 {
+  background-image: url(./green.png);
+
+}

@@ -1,0 +1,22 @@
+
+.choice {
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  border: #000 solid 1px;
+}
+
+
+.choice--0 {
+  background-image: url(./des-pierres.png);
+}
+
+.choice--1 {
+  background-image: url(./feuille-de-papier.png);
+}
+
+.choice--2 {
+  background-image: url(./ciseaux.png);
+}
+

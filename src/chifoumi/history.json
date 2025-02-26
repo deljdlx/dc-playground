@@ -1,0 +1,402 @@
+[
+    {
+        "playerChoice": 0,
+        "computerChoice": 1,
+        "result": -1
+    },
+    {
+        "playerChoice": 2,
+        "computerChoice": 1,
+        "result": 1
+    },
+    {
+        "playerChoice": 2,
+        "computerChoice": 1,
+        "result": 1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 1,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 0,
+        "result": 0
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 0,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 2,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 2,
+        "result": 1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 0,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 2,
+        "result": 1
+    },
+    {
+        "playerChoice": 2,
+        "computerChoice": 1,
+        "result": 1
+    },
+    {
+        "playerChoice": 2,
+        "computerChoice": 0,
+        "result": -1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 0,
+        "result": 0
+    },
+    {
+        "playerChoice": 2,
+        "computerChoice": 2,
+        "result": 0
+    },
+    {
+        "playerChoice": 2,
+        "computerChoice": 0,
+        "result": -1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 1,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 1,
+        "result": -1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 1,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 2,
+        "result": 1
+    },
+    {
+        "playerChoice": 2,
+        "computerChoice": 2,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 2,
+        "computerChoice": 0,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 0,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 0,
+        "computerChoice": 2,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 2,
+        "result": -1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 1,
+        "result": 0
+    },
+    {
+        "playerChoice": 1,
+        "computerChoice": 0,
+        "result": 1
+    }
+]
