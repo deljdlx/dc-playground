@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #ccc;
+}
+
+#slide-container {
+  box-sizing: border-box;
+  box-shadow: 3px 3px 1rem rgba(0,0,0,0.8);
+  outline: solid 1px #aaa;
+  background-color: #fff;
+  height: calc(100vh - 4rem);
+  padding: 1rem;
+  margin: 2rem;
+}
+
+#slide-container h1 {
+  border-bottom: solid 1px #ccc;
+}

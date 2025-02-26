@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .circle {
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .circle.resizing {
+            stroke: black;
+            stroke-width: 5px;
+            stroke-dasharray: 5, 2;
+        }
+
+        .line {
+            position: absolute;
+            border: 1px solid black;
+        }
+
+        .link {
+            position: absolute;
+            border: 1px solid black;
+            transform-origin: 0 0;
+        }
+
+
+
+        #application {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        #toolbar {
+
+        }
+
+        .svg-container {
+            background-color: #f0f8;
+        }
+
+        #board {
+            flex: 1;
+        }
+
+        .panel {
+            border: 1px solid black;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="application">
+        <div id="toolbar" class="panel">
+            <header>Shapes</header>
+        </div>
+        <div id="board" class="panel">
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/Circle.js"></script>
+    <script src="assets/js/Line.js"></script>
+    <script src="assets/js/Link.js"></script>
+    <script src="assets/js/Handle.js"></script>
+    <script src="assets/js/Board.js"></script>
+
+
+    <script>
+
+
+        const board = new Board('#board');
+
+        const c1 = board.createCircle(100, 400, 50, 'red');
+        const c2 = board.createCircle(300, 400, 50, 'blue');
+
+        // c1.setText('hello world');
+
+
+        const l1 = board.createLink(100, 100, 200, 100);
+        const l2 = board.createLink(100, 200, 200, 200);
+
+        // const c3 = board.createCircle(300, 300, 50, 'green');
+        // const c4 = board.createCircle(400, 400, 50, 'yellow');
+        // const l2 = board.createLink(c3, c4);
+
+        // const l3 = board.createLink(c2, c3);
+
+
+
+
+
+        board.draw();
+
+
+        /*
+        const circle0 = new Circle(100, 100, 50, 'red');
+        circle0.draw('#board');
+
+        const circle1 = new Circle(200, 200, 50, 'blue');
+        circle1.draw('#board');
+
+        const link1 = new Link(circle0, circle1);
+        link1.draw('#board');
+        */
+
+
+
+    </script>
+</body>
+</html>

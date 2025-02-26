@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* height: 100vh; */
+  /* background-color: #f0f0f0; */
+}
+
+.hex-grid-container {
+  /* overflow: hidden; */
+  background-color: #f0f0f0;
+  border: solid 1px #333;
+}
+
+.hex-group {
+  /* stroke: #f0f; */
+  /* stroke-width: 2; */
+}
+
+.hex {
+  /* stroke-width: 2; */
+  stroke: #333;
+  fill: #7fc7d388;
+  transition: all 0.3s ease;
+
+}
+
+.hex-group:hover .hex {
+  fill: #f0f;
+  filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .7));
+
+}
+
+.hex-content {
+  /* border: solid 1px #333; */
+  /* background-color: #f0f8; */
+  /* background: url("assets/img/cell-000.png"); */
+  background-size: cover;
+  border-radius: 50%;
+  text-align: center;
+  /* vertical centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
