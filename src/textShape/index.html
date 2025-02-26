@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦖</text></svg>">
+    <title>PNG Border Finder - The Web Dev Relic</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #444;
+        }
+        .highlight {
+            background: #222;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .code {
+            background: #eee;
+            padding: 10px;
+            border-left: 5px solid #0078D7;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🖼️ PNG Border Finder: The Prehistoric CSS Shape-Outsider</h1>
+    <h3>(A time-traveling adventure in Web Dev archaeology) <a href="https://github.com/deljdlx/TextShape>">Github</a></h3>
+
+    <h2>💾 Year: 2013</h2>
+    <p>👨‍💻 The web was young. Browsers were clunky. <span class="highlight">CSS shape-outside</span> didn’t exist.</p>
+    <p>🛠️ If you wanted text to wrap around a PNG <strong>without a rectangular box</strong>, you had two choices:</p>
+    <ul>
+        <li>1️⃣ <strong>Cry in a corner.</strong></li>
+        <li>2️⃣ <strong>Build a monstrosity in PHP and JavaScript.</strong></li>
+    </ul>
+    <p>Naturally, I chose the latter. 💀</p>
+
+    <h2>🧬 What is PNG Border Finder?</h2>
+    <p><strong>PNG Border Finder</strong> was my mad scientist experiment to extract the shape of a transparent PNG and force text to respect its divine contours. 🚀</p>
+
+    <h3>🖥️ How?</h3>
+    <ul>
+        <li>🔍 Read every <span class="highlight">single pixel</span> of a PNG.</li>
+        <li>🎭 Check <span class="highlight">transparency levels</span> to find edges.</li>
+        <li>📏 Smoothen, filter, and generate <span class="highlight">optimized text-wrapping zones</span>.</li>
+        <li>💡 Output a set of <span class="highlight">CSS-friendly coordinates</span> for perfect alignment.</li>
+    </ul>
+    <p>Essentially, <strong>before CSS could do it, I made the browser suffer instead.</strong> 🔥</p>
+
+    <h2>🕰️ Why was this necessary?</h2>
+    <p>Back in the day, if you wanted text to <strong>flow naturally around an irregular shape</strong>, your options were:</p>
+    <ul>
+        <li>❌ <strong>Hardcode margins by hand</strong> (gross 🤢).</li>
+        <li>❌ <strong>Use a float hack</strong> (ew 🤮).</li>
+        <li>❌ <strong>Sacrifice performance to the JavaScript gods</strong> (which I did 🙃).</li>
+    </ul>
+
+    <h2>⚡ PHP + JavaScript: The Dynamic Duo</h2>
+    <p>Since <strong>pure CSS couldn't handle it</strong>, I wrote <strong>two versions</strong>:</p>
+    <ul>
+        <li>🟢 <strong>JavaScript:</strong> Ran in the browser, pixel-by-pixel analysis using <span class="highlight">&lt;canvas&gt;</span>.</li>
+        <li>🔵 <strong>PHP:</strong> Server-side processing via <span class="highlight">GD Library</span>, because why not make the server suffer too?</li>
+    </ul>
+    <p>Together, they created a <strong>polygonal text-wrapping experience</strong> that was <strong>light-years ahead of CSS</strong>. *(And also terribly overengineered.)*</p>
+
+    <h2>🎩 Legacy of the Madness</h2>
+    <p>💡 Today, CSS finally has <span class="highlight">shape-outside</span> and <span class="highlight">clip-path</span>, so this kind of <strong>web sorcery is no longer necessary.</strong></p>
+    <p>📜 But back then, <strong>it was a thing of beauty and suffering</strong>. ⚡</p>
+
+    <p>Would I do it again? Probably not.  
+    Am I keeping it for nostalgia? Absolutely. 🎩✨</p>
+
+    <h3>👴 PNG Border Finder now rests in the Museum of Overkill Web Dev Solutions.</h3>
+    <p>🚀 Want to challenge modern CSS? Try rebuilding this in WebAssembly.</p>
+
+    <section>
+        <h3>Demo</h3>
+        <ul>
+            <li><a href="https://playground.jlb.ninja/textShape/example/textshapejs-debug.html">JS demo with debug on</a></li>
+            <li><a href="https://playground.jlb.ninja/textShape/example/textshapejs.html">JS version</a></li>
+            <li><a href="https://playground.jlb.ninja/textShape/example/textshapephp.php">PHP version</a></li>
+        </ul>
+
+    </section>
+
+    <div class="footer">
+        <p>👾 <em>"Old code never dies, it just gets refactored."</em> 👾</p>
+    </div>
+
+</body>
+</html>
