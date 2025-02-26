@@ -8,7 +8,16 @@ $json = json_decode(file_get_contents(__DIR__ . '/toilets.json'), true);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toilettes Publiques de Paris</title>
+    <!-- Pour iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Toilettes Paris">
+
+    <!-- Pour Android (Chrome) -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+
+    <title>Paris public toilets</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -45,10 +54,9 @@ $json = json_decode(file_get_contents(__DIR__ . '/toilets.json'), true);
 
 <body>
 
-    <!-- Barre de recherche + Bouton localisation -->
     <form onsubmit="searchAddress(event)">
         <div id="search-container">
-            <input type="text" id="search" placeholder="Rechercher une adresse..." />
+            <input type="text" id="search" placeholder="Search by address..." />
             <button type="submit">🔍</button>
             <button type="button" onclick="locateUser()">📍</button>
         </div>

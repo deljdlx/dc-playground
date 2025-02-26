@@ -1,13 +1,9 @@
-<?php
-require_once __DIR__ . '/vendor/autoload.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playground & Experimentations</title>
+    <title>Image to html</title>
 
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
@@ -89,31 +85,28 @@ require_once __DIR__ . '/vendor/autoload.php';
 <body>
 
     <div class="container">
-        <h1>🚀 Playground & Experimentations</h1>
+        <h1>🚀 Image to html</h1>
 
         <div class="experiments">
             <?php
-                $experimentations = scandir(__DIR__);
-                foreach ($experimentations as $experimentation) {
-                    if (is_dir($experimentation) && $experimentation !== '.' && $experimentation !== '..') {
-                        if (is_file($experimentation . '/index.php') || is_file($experimentation . '/index.html')) {
-                            echo '<div class="experiment">';
-                            echo '<a href="/' . $experimentation . '/">' . ucfirst($experimentation) . '</a>';
+                $demos = scandir(__DIR__ . '/demo');
 
-                            // Lire le README.md s'il existe
-                            $readmePath = $experimentation . '/readme.md';
-                            if (is_file($readmePath)) {
-                                $md = file_get_contents($readmePath);
-                                $parsedown = new Parsedown();
-                                echo '<p>' . substr(strip_tags($parsedown->text($md)), 0, 150) . '...</p>';
-                            }
-
-                            echo '</div>';
-                        }
+                foreach($demos as $demo) {
+                    if($demo === '.' || $demo === '..') {
+                        continue;
                     }
+
+                    if(strpos($demo, '.html') === false) {
+                        continue;
+                    }
+
+                    echo '<div class="experiment">';
+                        echo '<a href="demo/' . $demo . '">' . $demo . '</a>';
+                    echo '</div>';
                 }
             ?>
         </div>
     </div>
+
 </body>
 </html>

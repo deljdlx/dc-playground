@@ -1,0 +1,57 @@
+:root {
+  --pixel-size: 10px;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.row {
+  height: var(--pixel-size);
+}
+.pixel {
+  height: var(--pixel-size);
+  width: var(--pixel-size);
+  display: inline-block;
+  border-radius: 50%;
+  animation:
+    borderAnimation 2s infinite alternate ease-in-out,
+    /* vibrate 0.5s infinite linear, */
+    hueAnimation 5s infinite linear,
+    scale 3s infinite alternate linear,
+
+  ;
+}
+
+.pixel:hover {
+  background-color: #f0f;
+}
+
+
+@keyframes hueAnimation {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes scale {
+  0% { transform: scale(0.1); }
+  100% { transform: scale(2); }
+}
+
+@keyframes vibrate {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-2px, -2px); }
+  100% { transform: translate(2px, 2px); }
+}
+@keyframes borderAnimation {
+  0% {
+      border-radius: 0;
+  }
+  100% {
+      border-radius: 50%;
+  }
+}
+
+
