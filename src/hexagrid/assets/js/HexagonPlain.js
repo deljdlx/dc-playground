@@ -74,9 +74,7 @@ class HexagonPlain
         );
     });
 
-
-
-    // // create a div inside the foreignObject using xmlns http://www.w3.org/1999/xhtml
+    // create a div inside the foreignObject using xmlns http://www.w3.org/1999/xhtml
     const foreignObject = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
     foreignObject.setAttribute('z-index', 1000);
 
@@ -98,9 +96,6 @@ class HexagonPlain
     foreignObject.setAttribute('height', this.radius * 2);
 
     group.appendChild(foreignObject);
-
-
-
 
     hexagon.addEventListener('click', function() {
         console.log('clicked');

@@ -3,7 +3,7 @@ class Hexagon {
     this.grid = grid;
     this.col = col;
     this.row = row;
-    this._radius = radius; // on stocke dans _radius pour éviter les conflits get/set
+    this._radius = radius;
 
     this.hexWidth = Math.sqrt(3) * this._radius;
     this.hexHeight = 2 * this._radius;
@@ -11,11 +11,9 @@ class Hexagon {
     this.x = col * 1.5 * (this._radius + 1) + this._radius;
     this.y = row * (this.hexHeight * 0.866) + (col % 2) * (this.hexHeight / 2 * 0.866) + this._radius;
 
-    // Par défaut, on affiche "col,row" si pas de contenu
     this.content = (content === null) ? `${this.col},${this.row}` : content;
   }
 
-  // getters
   get radius() { return this._radius; }
 
   // Méthode principale
@@ -88,7 +86,6 @@ class Hexagon {
 
     const offsetCorners = [];
     for (let i = 0; i < 6; i++) {
-      // offsetEdges[i-1], offsetEdges[i]
       const ePrev = offsetEdges[(i + 5) % 6]; // côté précédent
       const eCurr = offsetEdges[i];
 
@@ -127,9 +124,12 @@ class Hexagon {
       console.log(`Hex ${this.col},${this.row} cliqué !`);
     });
 
+    this.drawSides(group, corners, offsetCorners);
 
+    return group;
+  }
 
-
+  drawSides(group, corners, offsetCorners) {
     // 3) Génération des 6 trapèzes
     for (let i = 0; i < 6; i++) {
       const c1 = corners[i];
@@ -149,6 +149,7 @@ class Hexagon {
         poly.setAttribute('points', pts);
         poly.setAttribute('fill', "black");
         poly.classList.add('hex-trapeze');
+        group.appendChild(poly);
 
 
         const foreignObject = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
@@ -160,6 +161,7 @@ class Hexagon {
         foreignObject.style.height = `${0.2 * this._radius}px`;
         foreignObject.style.transformOrigin = `${c1.x}px ${c1.y}px`;
 
+        let content = `⬇️${i}`;
         switch (i) {
           case 0:
             foreignObject.style.transformOrigin = `${c1.x -0.2 * this._radius - 3}px ${c1.y}px`;
@@ -168,8 +170,11 @@ class Hexagon {
             foreignObject.style.transform = `rotate(300deg) translateY(${0.2 * this._radius}px)`;
             break;
           case 1:
-            foreignObject.setAttribute('x', this.radius * 0.5 + this.radius * 0.1);
-            foreignObject.style.transform = `translateY(-${0.2 * this._radius}px)`;
+            foreignObject.style.transform = `
+              translateY(-${0.2 * this._radius}px)
+              translateX(${this._radius * -0.9}px)
+            `;
+
             break;
           case 2:
             foreignObject.style.transform = `
@@ -178,18 +183,22 @@ class Hexagon {
               rotate(60deg)
             `;
             break;
-
-            case 3:
-              foreignObject.setAttribute('x', this.radius * 0.2);
-              foreignObject.style.transform = `rotate(300deg) translateX(${this.radius * -0.1}px)`;
-              break;
+          case 3:
+            foreignObject.style.transform = `
+              rotate(300deg)
+              translateX(${this._radius * 0.1}px)
+            `;
+            content = `⬆️${i}`;
+            break;
 
           case 4:
-            foreignObject.style.transform = `translateX(${this.radius * 0.1}px)`;
+            foreignObject.style.transform = `translateX(${this._radius * 0.1}px)`;
+            content = `⬆️${i}`;
             break;
           case 5:
-            foreignObject.setAttribute('x', foreignObject.getAttribute('x') + this.radius * 0.2);
-            foreignObject.style.transform = `rotate(60deg) translateX(${this.radius * 0.1}px)`;
+            foreignObject.setAttribute('x', foreignObject.getAttribute('x') + this._radius * 0.2);
+            foreignObject.style.transform = `rotate(60deg) translateX(${this._radius * 0.1}px)`;
+            content = `⬆️${i}`;
             break;
 
         }
@@ -207,18 +216,12 @@ class Hexagon {
         div.style.display = 'flex';
         div.style.alignItems = 'center';
         div.style.justifyContent = 'center';
-        div.innerHTML = `⬆️${i}`;
-
-        // div.style.transform = `rotate(${60 + 60 * i}deg)`;
+        div.innerHTML = content;
 
         body.appendChild(div);
         foreignObject.appendChild(body);
         group.appendChild(foreignObject);
-
-        group.appendChild(poly);
       }
     }
-
-    return group;
   }
 }

@@ -18,8 +18,7 @@ body {
     borderAnimation 2s infinite alternate ease-in-out,
     /* vibrate 0.5s infinite linear, */
     hueAnimation 5s infinite linear,
-    scale 3s infinite alternate linear,
-
+    scale 3s infinite alternate linear
   ;
 }
 
