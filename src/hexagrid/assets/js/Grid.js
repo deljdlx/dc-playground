@@ -1,5 +1,8 @@
 class Grid
 {
+
+  plain = false
+
   columns;
   rows;
   hexRadius;
@@ -10,10 +13,11 @@ class Grid
 
   grid = [];
 
-  constructor(columns, rows, hexRadius) {
+  constructor(columns, rows, hexRadius, plain = false) {
     this.columns = columns;
     this.rows = rows;
     this.hexRadius = hexRadius;
+    this.plain = plain;
 
     this.hexWidth = Math.sqrt(3) * this.hexRadius;
     this.hexHeight = 2 * this.hexRadius;
@@ -41,7 +45,10 @@ class Grid
 
     for (let col = 0; col < this.columns; col++) {
       for (let row = 0; row < this.rows; row++) {
-          const hexagon = new Hexagon(this, col, row, this.hexRadius);
+          const hexagon = this.plain ?
+            new HexagonPlain(this, col, row, this.hexRadius)
+            : new Hexagon(this, col, row, this.hexRadius)
+          ;
           svg.appendChild(hexagon.render());
 
           this.grid[col][row] = hexagon;
